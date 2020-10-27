@@ -1,0 +1,138 @@
+<!doctype html>
+
+<html>
+  <head>
+    <title>ABTesting</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Abril+Fatface" />
+    <!-- TODO: add additional links here! e.g. fonts, icons, more stylesheets, etc. -->
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+  </head>
+
+
+  <style>
+  .flex-container {
+      position: relative;
+      display: flex;
+      flex-wrap: nowrap;
+      /* flex-direction: row; */
+      justify-content: space-around;
+      align-items: center;
+      text-align: center;
+  }
+
+  .center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      width: 50%;
+  }
+
+  </style>
+
+
+  <body>
+    <!-- TODO: put your HTML code here! -->
+
+    <h1> AB Testing</h1>
+    <p>
+
+    In this project, I deployed a site with two slightly different layouts. In each layout, only one featured differed (how the price of each cactus was displayed):
+
+    </p>
+
+    <div class="flex-container">
+        <div class="grid-item">
+            <div class="header">
+                <h3> Site A</h3>
+            </div>
+            <div class="img">
+                <img src="siteA.png" alt="image of site A'" style="width:90%;">
+            </div>
+            <div class="description">
+                <p>In this site the text displaying the price of each type of cactus is in black and inline with the other text.</p>
+            </div>
+        </div>
+        <div class="grid-item">
+            <div class="header">
+                <h3> Site B</h3>
+            </div>
+            <div class="img">
+                <img src="siteB.png" alt="image of site B'" style="width:90%;">
+            </div>
+            <div class="description">
+                <p>In this site, the text displaying the price of each type of cactus is in red and is located on the next line. The overall goal of this design layout was to create a greater contrast between the price and the description, to make the price more noticable.</p>
+            </div>
+        </div>
+    </div>
+    <p>
+
+    All other features remained the same.
+
+    When a user visited <a href="https://thawing-chamber-15817.herokuapp.com/">the site</a>, there was a 50% chance the user would experience layout A
+    and a 50% chance the user would experience layout B.
+
+    The goal was to analyze user data and compare and contrast the results of this simple UI change, on <i>return rate </i> and
+    <i>time to completion. </i>
+    </p>
+    <h2> Conducting Hypothesis Testing </h2>
+
+    <h3> Creating Hypothesis </h3>
+
+
+    <h4>Return Rate </h4>
+    <p> For someone to "return" to the site was defined as them going back to the home page after visiting the check out. Someone was defined as "returning" even if they did not do anything while back at the home page.
+        The number of times they "returned" was not counted, but rather just if they did or did not return. Thus the rate of return is calculcated as:
+    <img src="return_formula.png" alt="# users who returned/ total # users'" style="width:40%" class="center">
+    <br>
+    <br>
+    <i>Null Hypothesis (H<sub>0</sub>): </i>
+    The return rate of site A = the return rate of site B.
+    <br>
+    <i>Alternative Hypothesis (H<sub>A</sub>): </i>
+    The return rate of site A > the return rate of site B.
+
+    </p>
+
+    <h4>Time to Completion </h4>
+    <p> <i>Null Hypothesis (H<sub>0</sub>): </i>
+    The time to completion of site A = the time to completion of site B.
+    <br>
+    <i>Alternative Hypothesis (H<sub>A</sub>): </i>
+    the time to completion of site A > the time to completion of site B.
+    </p>
+
+    <p>My belief, is that while the changes between site A and site B are small, the use of contrasting text of site B,
+    will allow the prices on site B to stand out more. This easy identification of pricing, will make it easier for users to
+    accomplish the task of adding $150 of cacti to their cart. Thus, we will reject both null hypothesis and adopt the alternatives.
+    The belief with the alternative hypothesis, is that less users will have to return to the home page using site B, since they will
+    be able to accomplish the task on their first try, and that they will also be able to accomplish the task in a shorter period of time.</p>
+
+    <h3> Collecting Data </h3>
+    <p> I collected data via users from studio and asking friends and family to engage with the site. To ensure uniform and fair results,
+    I tried to provide each user with the same task prompt: to add atleast $150 of cacti to their cart. </p>
+
+    <h3> Cleaning Data </h3>
+    <p> My next step was to clean the data. Prior to the cleaning process, I had data from 20+ users. However, it was necessary
+    for me to remove the data of users who did not interact with the site in a meaningful manner. This included, for example,
+    users who visited the site but did not press any buttons. After the cleaning process, I was left with 17 user data points to analyze.</p>
+
+    <h2> Results </h2>
+    <img src="infographic.png" alt="infographic'" style="width:90%;">
+
+    <p> Using a 5% significance level, the data between site A and site B, was not significantly different. Becuase our p values
+        for both tests were > than .05, we fail to reject the null hypotheses. 
+        Here are some points I would like to take into consideration or implement in the future:
+        <ul>
+        <li>I would want to recompute these calcuations with data ofa larger number of users. (ideally 40+) </li>
+        <li> Were if the differences between site A and site B were large enough? A/B testing usually is completed
+        with small design changes, but in a site such as this one, that is already rather simple, I wonder if perhaps
+        the differences in site A and B were too small </li>
+        <li>
+        I wonder if I would get similar data if all users had never participated in this exact experiement before (I wonder if users from studio were accustomed to the task
+        and could very quickly add $150 of cacti to the cart with little hesitation even based on differing ui factors).
+    </li>
+        </ul>
+    </thead> </p>
+  </body>
+</html>

@@ -1,0 +1,34 @@
+/* Put your style information here! */
+
+h1 {
+    font-family: Abril Fatface;
+    font-size: 3em;
+    color:#38761d;
+
+}
+
+h2 {
+    font-family: Abril Fatface;
+    font-size: 2em;
+    color: #93c47d;
+}
+
+h3{
+    font-family: Abril Fatface;
+    font-size: 1.5em;
+    color:#38761d;
+}
+
+h4{
+    font-family: Abril Fatface;
+    color:#990000;
+    font-size: 1em;
+}
+
+p{
+    font-family; "Times New Roman";
+    font-size: 1em;
+}
+body{
+    margin: 5% 10%;
+}
